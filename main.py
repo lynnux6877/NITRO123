@@ -1,4 +1,5 @@
 import os, requests, random, threading, json, time, multiprocessing
+from keep_alive import keep_alive
 from colorama import Fore
 
 # Credit to Pycenter by billythegoat356
@@ -93,3 +94,4 @@ if __name__ == "__main__":
     while True:
         if threading.active_count() <= int(Worker().config("thread")):  
             threading.Thread(target=DNG.run(), args=()).start()
+keep_alive()
